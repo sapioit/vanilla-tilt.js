@@ -1,6 +1,7 @@
 # vanilla-tilt.js
 
 [![npm version](https://badge.fury.io/js/vanilla-tilt.svg)](https://badge.fury.io/js/vanilla-tilt)
+[![ghit.me](https://ghit.me/badge.svg?repo=micku7zu/vanilla-tilt.js)](https://ghit.me/repo/micku7zu/vanilla-tilt.js)
 
 A smooth 3D tilt javascript library forked from [Tilt.js (jQuery version)](https://github.com/gijsroge/tilt.js).
 
@@ -76,10 +77,10 @@ VanillaTilt.init(elements);
 ### Install
 You can copy and include any of the following file:
 
-* [dist/vanilla-tilt.js](https://raw.githubusercontent.com/micku7zu/vanilla-tilt.js/master/dist/vanilla-tilt.js) ~ 15kb
-* [dist/vanilla-tilt.min.js](https://raw.githubusercontent.com/micku7zu/vanilla-tilt.js/master/dist/vanilla-tilt.min.js) ~ 8.5kb
-* [dist/vanilla-tilt.babel.js](https://raw.githubusercontent.com/micku7zu/vanilla-tilt.js/master/dist/vanilla-tilt.babel.js) ~ 16.5kb
-* [dist/vanilla-tilt.babel.min.js](https://raw.githubusercontent.com/micku7zu/vanilla-tilt.js/master/dist/vanilla-tilt.babel.min.js) ~ 9.5kb
+* [dist/vanilla-tilt.js](https://raw.githubusercontent.com/micku7zu/vanilla-tilt.js/master/dist/vanilla-tilt.js) ~ 6kb
+* [dist/vanilla-tilt.min.js](https://raw.githubusercontent.com/micku7zu/vanilla-tilt.js/master/dist/vanilla-tilt.min.js) ~ 3.5kb
+* [dist/vanilla-tilt.babel.js](https://raw.githubusercontent.com/micku7zu/vanilla-tilt.js/master/dist/vanilla-tilt.babel.js) ~ 8.5kb
+* [dist/vanilla-tilt.babel.min.js](https://raw.githubusercontent.com/micku7zu/vanilla-tilt.js/master/dist/vanilla-tilt.babel.min.js) ~ 4.3kb
 
 #### NPM
 
@@ -88,9 +89,6 @@ Also available on npm https://www.npmjs.com/package/vanilla-tilt
 ```
 npm install vanilla-tilt
 ```
-
-### Known issues
-- [Getting weird rendering issues on Safari](https://github.com/micku7zu/vanilla-tilt.js/issues/22)
 
 ### Credits
 

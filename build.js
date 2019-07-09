@@ -3,7 +3,7 @@ import nodeResolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import babel from 'rollup-plugin-babel';
 import babelrc from 'babelrc-rollup';
-import {minify} from 'uglify-js';
+import {minify} from 'uglify-es';
 import fs from 'fs';
 
 const pkg = require('./package.json');
@@ -17,14 +17,14 @@ rollup({
   entry: 'src/vanilla-tilt.js',
   plugins: [
     nodeResolve({
-      module: true,
+      module_es2015: true,
       jsnext: true,
       main: true,
     })
   ],
   external: external
 }).then(bundle => bundle.write({
-  dest: pkg.module,
+  dest: pkg.module_es2015,
   format: 'es'
 })).catch(err => console.log(err.stack));
 
@@ -32,7 +32,7 @@ rollup({
   entry: 'src/vanilla-tilt.js',
   plugins: [
     nodeResolve({
-      module: true,
+      module_es2015: true,
       jsnext: true,
       main: true,
     }),
@@ -53,7 +53,7 @@ rollup({
   entry: 'src/vanilla-tilt.js',
   plugins: [
     nodeResolve({
-      module: true,
+      module_es2015: true,
       jsnext: true,
       main: true,
     })
@@ -63,13 +63,11 @@ rollup({
   bundle.write({
     moduleName: 'VanillaTilt',
     format: 'iife',
-    dest: pkg.dist,
+    dest: pkg.distrib,
   }).then(() => {
-    const code = minify(pkg.dist, {
-      mangle: {except: ['VanillaTilt']}
-    }).code;
+    const code = minify(fs.readFileSync(pkg.distrib).toString()).code;
 
-    fs.writeFileSync(pkg.dist.replace('.js', '.min.js'), code);
+    fs.writeFileSync(pkg.distrib.replace('.js', '.min.js'), code);
     return bundle;
   })
 }).catch(err => console.log(err.stack));
@@ -78,7 +76,7 @@ rollup({
   entry: 'src/vanilla-tilt.js',
   plugins: [
     nodeResolve({
-      module: true,
+      module_es2015: true,
       jsnext: true,
       main: true
     }),
@@ -87,16 +85,14 @@ rollup({
   ],
   external: external
 }).then((bundle) => {
-  const dest = pkg.dist.replace('.js', '.babel.js');
+  const dest = pkg.distrib.replace('.js', '.babel.js');
   bundle.write({
     moduleName: 'VanillaTilt',
     format: 'iife',
     dest: dest,
   })
     .then(() => {
-      const code = minify(dest, {
-        mangle: {except: ['VanillaTilt']}
-      }).code;
+      const code = minify(fs.readFileSync(dest).toString()).code;
 
       fs.writeFileSync(dest.replace('.js', '.min.js'), code);
       return bundle;
